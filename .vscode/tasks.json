@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Delete old placeholder.svg",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-f",
+				"assets/images/placeholder.svg"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify asset references",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"import os,re,sys\nfrom pathlib import Path\n\nroot=Path('.').resolve()\n\nhtml_files=[p for p in root.rglob('*.html')]\ncss_files=[p for p in root.rglob('*.css')]\njs_files=[p for p in root.rglob('*.js')]\n\nmissing=[]\nleading_slash=[]\n\nimg_src_re=re.compile(r\"<img\\b[^>]*\\bsrc=['\\\"]([^'\\\">]+)['\\\"]\", re.IGNORECASE)\nsrcset_re=re.compile(r\"\\bsrcset=['\\\"]([^'\\\"]+)['\\\"]\", re.IGNORECASE)\nurl_re=re.compile(r\"url\\(([^)]+)\\)\", re.IGNORECASE)\n\n\ndef norm_ref(ref:str)->str:\n    ref=ref.strip()\n    ref=ref.strip('\"\\'')\n    ref=ref.split('#',1)[0].split('?',1)[0]\n    return ref\n\ndef check_path(base:Path, ref:str, kind:str, owner:Path):\n    ref=norm_ref(ref)\n    if not ref or ref.startswith(('http://','https://','data:','mailto:','tel:')):\n        return\n    # protocol-relative (//example.com)\n    if ref.startswith('//'):\n        return\n    # skip anchors\n    if ref.startswith('#'):\n        return\n    target=(base/ref).resolve()\n    try:\n        target.relative_to(root)\n    except Exception:\n        # outside workspace; treat as missing\n        missing.append((kind,str(owner.relative_to(root)),ref,'OUTSIDE_ROOT'))\n        return\n    if not target.exists():\n        missing.append((kind,str(owner.relative_to(root)),ref,'MISSING'))\n\nfor f in html_files:\n    txt=f.read_text(errors='ignore')\n    # leading slash internal paths\n    for m in re.finditer(r\"\\b(?:href|src)=['\\\"]/[^/][^'\\\"]*['\\\"]\", txt, re.IGNORECASE):\n        leading_slash.append((str(f.relative_to(root)), m.group(0)))\n\n    for ref in img_src_re.findall(txt):\n        check_path(f.parent, ref, 'HTML_IMG_SRC', f)\n\n    for srcset in srcset_re.findall(txt):\n        # srcset: 'a.jpg 1x, b.jpg 2x'\n        parts=[p.strip().split(' ')[0] for p in srcset.split(',') if p.strip()]\n        for ref in parts:\n            check_path(f.parent, ref, 'HTML_SRCSET', f)\n\nfor f in css_files:\n    txt=f.read_text(errors='ignore')\n    for raw in url_re.findall(txt):\n        ref=raw.strip()\n        check_path(f.parent, ref, 'CSS_URL', f)\n\n# best-effort: look for referenced images in JS strings\njs_img_re=re.compile(r\"(['\\\"])([^'\\\"]+\\.(?:png|jpe?g|gif|svg|webp))(\\1)\", re.IGNORECASE)\nfor f in js_files:\n    txt=f.read_text(errors='ignore')\n    for _,ref,_ in js_img_re.findall(txt):\n        check_path(f.parent, ref, 'JS_IMG_STR', f)\n\nprint(f'HTML files: {len(html_files)} | CSS files: {len(css_files)} | JS files: {len(js_files)}')\nprint(f'Leading-slash href/src findings: {len(leading_slash)}')\nprint(f'Missing asset refs: {len(missing)}')\n\nif leading_slash:\n    print('\\nLEADING_SLASH (first 20):')\n    for item in leading_slash[:20]:\n        print(' -', item[0], '::', item[1])\n\nif missing:\n    print('\\nMISSING_ASSETS (first 50):')\n    for kind,owner,ref,why in missing[:50]:\n        print(f' - {kind} in {owner}: {ref} ({why})')\n\nif leading_slash or missing:\n    sys.exit(1)\n"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify asset references (script)",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/verify_assets.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
