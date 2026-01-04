@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: /sitemap.xml
+Sitemap: https://kavinduumayanga.github.io/TechStudentHub/sitemap.xml
