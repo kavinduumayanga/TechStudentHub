@@ -358,7 +358,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .small { font-size: 13px; color: var(--muted); }
 
-.ad-placeholder {
+.ad-slot {
   border: 2px dashed rgba(16, 24, 40, 0.25);
   border-radius: 12px;
   padding: 14px;
@@ -397,7 +397,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .site-header,
   .site-footer,
   .skip-link,
-  .ad-placeholder {
+  .ad-slot {
     display: none !important;
   }
 

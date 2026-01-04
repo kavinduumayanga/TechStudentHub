@@ -183,9 +183,13 @@ a:hover {
         <h3>Grid (two-dimensional layouts)</h3>
         <p>Use grid for page layouts and card grids:</p>
         <pre><code>.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+}
+
+.grid > * {
+  flex: 1 1 240px;
 }
 </code></pre>
         <p>Grid becomes powerful when you want rows and columns at the same time.</p>
@@ -199,8 +203,8 @@ a:hover {
         </ul>
         <p>Example media query:</p>
         <pre><code>@media (max-width: 720px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .grid > * {
+    flex-basis: 100%;
   }
 }
 </code></pre>

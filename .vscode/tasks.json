@@ -32,6 +32,91 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Audit: leading-slash internal links",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"grep -RIn --include='*.html' 'href=\"/' . && echo 'FOUND href=\"/\"' || echo 'OK: no href=\"/\"'\ngrep -RIn --include='*.html' 'src=\"/' . && echo 'FOUND src=\"/\"' || echo 'OK: no src=\"/\"'"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Audit: leading-slash internal links (fixed quoting)",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"from pathlib import Path\nimport re\nroot=Path('.')\nhtml=list(root.rglob('*.html'))\nbad=[]\npat=re.compile(r\"\\b(?:href|src)=['\\\"]/[^/][^'\\\"]*['\\\"]\", re.I)\nfor f in html:\n    txt=f.read_text(errors='ignore')\n    for m in pat.finditer(txt):\n        bad.append((str(f), m.group(0)))\nprint('Leading-slash href/src findings:', len(bad))\nif bad:\n    print('\\nFirst 20:')\n    for f,s in bad[:20]:\n        print('-', f, '::', s)\n    raise SystemExit(1)\n"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Audit: run existing verify_assets script",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/verify_assets.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Audit: deployed URL smoke test",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"set -e\nurls='https://kavinduumayanga.github.io/TechStudentHub/\nhttps://kavinduumayanga.github.io/TechStudentHub/blog/index.html\nhttps://kavinduumayanga.github.io/TechStudentHub/blog/post-1.html\nhttps://kavinduumayanga.github.io/TechStudentHub/blog/post-13.html\nhttps://kavinduumayanga.github.io/TechStudentHub/contact.html\nhttps://kavinduumayanga.github.io/TechStudentHub/sitemap.xml\nhttps://kavinduumayanga.github.io/TechStudentHub/robots.txt'\nfail=0\nprintf '%s\\n' \"$urls\" | while IFS= read -r u; do\n  if curl -fsSL \"$u\" >/dev/null; then\n    echo \"OK  $u\"\n  else\n    echo \"FAIL $u\"\n    fail=1\n  fi\ndone\nexit $fail"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Audit: SEO tags per HTML",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"import re\nfrom pathlib import Path\nroot=Path('.')\nhtml=list(root.rglob('*.html'))\nmissing_title=[]\nmissing_desc=[]\nbad_h1=[]\nfor f in html:\n    t=f.read_text(errors='ignore')\n    if re.search(r'<title>\\s*</title>', t, re.I) or not re.search(r'<title>.*?</title>', t, re.I|re.S):\n        missing_title.append(str(f))\n    if not re.search(r'<meta\\s+name=[\"\\\"]description[\"\\\"]\\s+content=', t, re.I):\n        missing_desc.append(str(f))\n    h1=len(re.findall(r'<h1\\b', t, re.I))\n    if h1!=1:\n        bad_h1.append((str(f), h1))\nprint('HTML files:', len(html))\nprint('Missing <title>:', len(missing_title))\nprint('Missing meta description:', len(missing_desc))\nprint('Pages with h1!=1:', len(bad_h1))\nif missing_title:\n    print('Missing <title> (first 10):')\n    print('\\n'.join(missing_title[:10]))\nif missing_desc:\n    print('Missing meta description (first 10):')\n    print('\\n'.join(missing_desc[:10]))\nif bad_h1:\n    print('Bad h1 count (first 10):')\n    for p,c in bad_h1[:10]:\n        print(p, c)\nif missing_title or missing_desc or bad_h1:\n    raise SystemExit(1)\n"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify assets + leading slashes (post-cleanup)",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/verify_assets.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Deployed smoke test (post-cleanup)",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"import urllib.request\nurls=[\n 'https://kavinduumayanga.github.io/TechStudentHub/',\n 'https://kavinduumayanga.github.io/TechStudentHub/blog/index.html',\n 'https://kavinduumayanga.github.io/TechStudentHub/blog/post-12.html',\n 'https://kavinduumayanga.github.io/TechStudentHub/assets/css/style.css'\n]\nfor u in urls:\n try:\n  with urllib.request.urlopen(u, timeout=20) as r:\n   print('OK ', u, r.status)\n except Exception as e:\n  print('FAIL', u, e)\n  raise SystemExit(1)\n"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify assets + leading slashes (final)",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/verify_assets.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
 		}
 	]
 }
