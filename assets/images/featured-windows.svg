@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration of a computer settings panel</title>
+  <desc id="desc">A generic desktop monitor with settings cards and status indicators, suitable for a Windows troubleshooting article.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef5ff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2b6de8"/>
+      <stop offset="1" stop-color="#1f57c3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="260" cy="210" r="160" fill="#cfe3ff"/>
+  <circle cx="440" cy="340" r="190" fill="#b9d6ff" opacity="0.9"/>
+
+  <!-- monitor -->
+  <rect x="530" y="130" width="600" height="360" rx="22" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="570" y="170" width="520" height="270" rx="16" fill="#f7fbff" stroke="#d6e6ff"/>
+  <rect x="570" y="170" width="520" height="22" rx="11" fill="#e8f1ff"/>
+
+  <!-- sidebar -->
+  <rect x="590" y="212" width="150" height="210" rx="14" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="610" y="240" width="110" height="10" rx="5" fill="#9dc4ff"/>
+  <rect x="610" y="265" width="90" height="10" rx="5" fill="#9dc4ff" opacity="0.75"/>
+  <rect x="610" y="290" width="120" height="10" rx="5" fill="#9dc4ff" opacity="0.6"/>
+  <rect x="610" y="315" width="80" height="10" rx="5" fill="#9dc4ff" opacity="0.5"/>
+
+  <!-- main cards -->
+  <rect x="760" y="212" width="310" height="90" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="760" y="332" width="310" height="90" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+
+  <rect x="790" y="242" width="140" height="12" rx="6" fill="url(#accent)"/>
+  <rect x="790" y="266" width="250" height="10" rx="5" fill="#9dc4ff" opacity="0.8"/>
+
+  <rect x="790" y="362" width="170" height="12" rx="6" fill="url(#accent)"/>
+  <rect x="790" y="386" width="240" height="10" rx="5" fill="#9dc4ff" opacity="0.8"/>
+
+  <!-- status icons -->
+  <circle cx="1040" cy="250" r="10" fill="#0b7a3b" opacity="0.85"/>
+  <circle cx="1040" cy="370" r="10" fill="#f0b429" opacity="0.85"/>
+
+  <!-- stand -->
+  <path d="M770 490h120l22 70h-164l22-70Z" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="690" y="560" width="440" height="18" rx="9" fill="#ffffff" stroke="#d6e6ff"/>
+</svg>

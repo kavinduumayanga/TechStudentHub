@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration of a simple publishing dashboard</title>
+  <desc id="desc">A generic chart and content cards illustration representing website monetization and analytics, without any logos or brands.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef5ff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2b6de8"/>
+      <stop offset="1" stop-color="#1f57c3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="240" cy="220" r="170" fill="#cfe3ff"/>
+  <circle cx="430" cy="360" r="210" fill="#b9d6ff" opacity="0.9"/>
+
+  <!-- dashboard frame -->
+  <rect x="520" y="120" width="630" height="410" rx="22" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="560" y="160" width="550" height="26" rx="13" fill="#e8f1ff"/>
+  <circle cx="585" cy="173" r="6" fill="#9dc4ff"/>
+  <circle cx="605" cy="173" r="6" fill="#9dc4ff" opacity="0.8"/>
+  <circle cx="625" cy="173" r="6" fill="#9dc4ff" opacity="0.6"/>
+
+  <!-- chart area -->
+  <rect x="560" y="205" width="320" height="180" rx="16" fill="#f7fbff" stroke="#d6e6ff"/>
+  <path d="M585 350l55-60 60 32 55-78 45 40 50-60" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M585 350h270" stroke="#d6e6ff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- content cards -->
+  <rect x="900" y="205" width="210" height="78" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="900" y="307" width="210" height="78" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="900" y="409" width="210" height="78" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+
+  <rect x="925" y="232" width="160" height="12" rx="6" fill="url(#accent)"/>
+  <rect x="925" y="254" width="140" height="10" rx="5" fill="#9dc4ff" opacity="0.75"/>
+
+  <rect x="925" y="334" width="130" height="12" rx="6" fill="url(#accent)"/>
+  <rect x="925" y="356" width="150" height="10" rx="5" fill="#9dc4ff" opacity="0.75"/>
+
+  <rect x="925" y="436" width="150" height="12" rx="6" fill="url(#accent)"/>
+  <rect x="925" y="458" width="120" height="10" rx="5" fill="#9dc4ff" opacity="0.75"/>
+
+  <!-- footer pill -->
+  <rect x="560" y="409" width="320" height="78" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="590" y="438" width="240" height="12" rx="6" fill="#9dc4ff" opacity="0.85"/>
+  <rect x="590" y="462" width="200" height="10" rx="5" fill="#9dc4ff" opacity="0.65"/>
+</svg>

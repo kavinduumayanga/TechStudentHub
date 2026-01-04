@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">CV structure diagram</title>
+  <desc id="desc">A generic diagram showing a resume layout with sections and headings.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="560" rx="28" fill="url(#bg)" stroke="#d6e6ff"/>
+  <rect x="70" y="70" width="860" height="420" rx="22" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="110" y="120" width="280" height="16" rx="8" fill="#2b6de8"/>
+  <rect x="110" y="155" width="520" height="12" rx="6" fill="#9dc4ff" opacity="0.85"/>
+  <rect x="110" y="178" width="480" height="12" rx="6" fill="#9dc4ff" opacity="0.7"/>
+  <rect x="110" y="214" width="200" height="12" rx="6" fill="#475467" opacity="0.25"/>
+
+  <rect x="110" y="252" width="220" height="14" rx="7" fill="#2b6de8" opacity="0.9"/>
+  <rect x="110" y="282" width="760" height="10" rx="5" fill="#9dc4ff" opacity="0.7"/>
+  <rect x="110" y="305" width="720" height="10" rx="5" fill="#9dc4ff" opacity="0.55"/>
+  <rect x="110" y="328" width="680" height="10" rx="5" fill="#9dc4ff" opacity="0.4"/>
+
+  <rect x="110" y="366" width="240" height="14" rx="7" fill="#2b6de8" opacity="0.9"/>
+  <rect x="110" y="396" width="560" height="10" rx="5" fill="#9dc4ff" opacity="0.7"/>
+  <rect x="110" y="419" width="520" height="10" rx="5" fill="#9dc4ff" opacity="0.55"/>
+
+  <rect x="110" y="455" width="180" height="12" rx="6" fill="#475467" opacity="0.25"/>
+</svg>

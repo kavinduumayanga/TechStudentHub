@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration of a resume document on a laptop</title>
+  <desc id="desc">A generic workspace illustration with a laptop and a document card, suitable for a CV article.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef5ff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2b6de8"/>
+      <stop offset="1" stop-color="#1f57c3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- soft blobs -->
+  <circle cx="210" cy="190" r="140" fill="#cfe3ff"/>
+  <circle cx="350" cy="320" r="170" fill="#b9d6ff" opacity="0.9"/>
+  <circle cx="520" cy="210" r="110" fill="#9dc4ff" opacity="0.85"/>
+
+  <!-- laptop -->
+  <rect x="610" y="165" width="510" height="310" rx="22" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="650" y="205" width="430" height="230" rx="16" fill="#f7fbff" stroke="#d6e6ff"/>
+  <rect x="650" y="205" width="430" height="18" rx="9" fill="#e8f1ff"/>
+
+  <!-- document card -->
+  <rect x="700" y="250" width="330" height="165" rx="16" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="730" y="280" width="170" height="14" rx="7" fill="url(#accent)"/>
+  <rect x="730" y="310" width="270" height="10" rx="5" fill="#9dc4ff" opacity="0.9"/>
+  <rect x="730" y="332" width="250" height="10" rx="5" fill="#9dc4ff" opacity="0.75"/>
+  <rect x="730" y="354" width="220" height="10" rx="5" fill="#9dc4ff" opacity="0.6"/>
+
+  <!-- checklist dots -->
+  <circle cx="735" cy="382" r="6" fill="#0b7a3b" opacity="0.9"/>
+  <circle cx="755" cy="382" r="6" fill="#0b7a3b" opacity="0.65"/>
+  <circle cx="775" cy="382" r="6" fill="#0b7a3b" opacity="0.45"/>
+
+  <!-- base -->
+  <path d="M600 478h540c18 0 32 14 32 32v14H568v-14c0-18 14-32 32-32Z" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="770" y="490" width="200" height="10" rx="5" fill="#e8f1ff"/>
+
+  <!-- subtle corner marks -->
+  <path d="M88 520h160" stroke="#2b6de8" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+  <path d="M88 550h240" stroke="#2b6de8" stroke-width="10" stroke-linecap="round" opacity="0.22"/>
+</svg>

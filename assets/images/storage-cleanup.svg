@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Storage cleanup illustration</title>
+  <desc id="desc">A generic disk usage bar with cleanup chips and a progress indicator.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef5ff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2b6de8"/>
+      <stop offset="1" stop-color="#1f57c3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="560" rx="28" fill="url(#bg)" stroke="#d6e6ff"/>
+
+  <rect x="120" y="120" width="760" height="120" rx="22" fill="#ffffff" stroke="#d6e6ff"/>
+  <rect x="170" y="160" width="320" height="14" rx="7" fill="#2b6de8"/>
+  <rect x="170" y="190" width="660" height="18" rx="9" fill="#e8f1ff"/>
+  <rect x="170" y="190" width="460" height="18" rx="9" fill="url(#accent)"/>
+
+  <rect x="120" y="270" width="760" height="200" rx="22" fill="#ffffff" stroke="#d6e6ff"/>
+
+  <!-- chips -->
+  <rect x="170" y="315" width="180" height="34" rx="17" fill="#f7fbff" stroke="#d6e6ff"/>
+  <rect x="370" y="315" width="210" height="34" rx="17" fill="#f7fbff" stroke="#d6e6ff"/>
+  <rect x="600" y="315" width="230" height="34" rx="17" fill="#f7fbff" stroke="#d6e6ff"/>
+
+  <rect x="190" y="327" width="120" height="10" rx="5" fill="#9dc4ff" opacity="0.8"/>
+  <rect x="390" y="327" width="150" height="10" rx="5" fill="#9dc4ff" opacity="0.8"/>
+  <rect x="620" y="327" width="170" height="10" rx="5" fill="#9dc4ff" opacity="0.8"/>
+
+  <!-- checklist lines -->
+  <rect x="170" y="375" width="560" height="12" rx="6" fill="#9dc4ff" opacity="0.75"/>
+  <rect x="170" y="405" width="520" height="12" rx="6" fill="#9dc4ff" opacity="0.6"/>
+  <rect x="170" y="435" width="480" height="12" rx="6" fill="#9dc4ff" opacity="0.45"/>
+</svg>
