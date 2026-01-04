@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>How Git and GitHub Work (Simple Explanation) | Tech &amp; Student Help Hub</title>
+  <meta name="description" content="Understand Git and GitHub with a simple mental model: commits, branches, remotes, pull vs push, and a beginner workflow for static websites." />
+
+  <!-- Canonical URL can be added after deployment. -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Git and GitHub Work (Simple Explanation)" />
+  <meta property="og:description" content="A beginner mental model for Git (history) and GitHub (sharing), with a simple workflow you can use today." />
+  <meta property="og:image" content="../assets/images/content-plan.svg" />
+  <meta property="og:url" content="post-8.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Git and GitHub Work (Simple Explanation)" />
+  <meta name="twitter:description" content="Commits, branches, push/pull, and a beginner workflow for publishing on GitHub Pages." />
+  <meta name="twitter:image" content="../assets/images/content-plan.svg" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How Git and GitHub Work (Simple Explanation)",
+    "description": "Understand Git and GitHub with a simple mental model: commits, branches, remotes, pull vs push, and a beginner workflow for static websites.",
+    "image": "../assets/images/content-plan.svg",
+    "datePublished": "2026-01-04",
+    "dateModified": "2026-01-04",
+    "author": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../assets/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "post-8.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Tech & Student Help Hub home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14c1.2 0 2.3.5 3 1.4.7-.9 1.8-1.4 3-1.4 2.2 0 4 1.8 4 4H3c0-2.2 1.8-4 4-4Z" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 3v3" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 8h12" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Tech &amp; Student Help Hub</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container">
+      <article class="prose" aria-label="Blog post">
+        <header>
+          <p class="kicker">Beginner Guide</p>
+          <h1>How Git and GitHub Work (Simple Explanation)</h1>
+          <p class="lede">Git and GitHub are often taught with lots of commands and confusing terms. You don’t need that to start. What you need is a mental model: Git is your project’s history, and GitHub is a place to store and share that history. This guide explains the parts that matter for beginners—especially if you’re building a static website.</p>
+          <div class="meta">
+            <span><time datetime="2026-01-04">Jan 4, 2026</time></span>
+            <span aria-hidden="true">•</span>
+            <span>11 min read</span>
+            <span aria-hidden="true">•</span>
+            <span>Category: Beginner Guide</span>
+          </div>
+        </header>
+
+        <figure class="post-featured-image" aria-label="Featured image">
+          <img class="post-featured-image" src="../assets/images/content-plan.svg" alt="Illustration of a project plan board representing version history" width="1200" height="630" loading="eager" decoding="async" />
+          <figcaption>Git gives you a reliable history of changes.</figcaption>
+        </figure>
+
+        <nav class="table-of-contents" aria-label="Table of contents">
+          <strong>Table of contents</strong>
+          <ol>
+            <li><a href="#mental-model">The mental model (Git vs GitHub)</a></li>
+            <li><a href="#commit">Commits: save points you can trust</a></li>
+            <li><a href="#branch">Branches: try changes safely</a></li>
+            <li><a href="#remote">Remotes: your copy vs GitHub’s copy</a></li>
+            <li><a href="#workflow">A simple beginner workflow</a></li>
+            <li><a href="#pages">How this connects to GitHub Pages</a></li>
+            <li><a href="#mistakes">Common mistakes and how to avoid them</a></li>
+            <li><a href="#related">Related reading</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="mental-model">The mental model (Git vs GitHub)</h2>
+        <ul>
+          <li><strong>Git</strong> is a tool on your computer that tracks changes in a folder.</li>
+          <li><strong>GitHub</strong> is a website that hosts Git repositories online.</li>
+        </ul>
+        <p>That’s it. Everything else is built on top of those two ideas.</p>
+
+        <h2 id="commit">Commits: save points you can trust</h2>
+        <p>A commit is like a “snapshot” of your project at a point in time. You can always go back to a commit if you break something.</p>
+        <h3>Good commit habits</h3>
+        <ul>
+          <li>Commit small changes that you can describe in one sentence.</li>
+          <li>Write messages that explain intent (e.g., “Fix blog links for project site”).</li>
+          <li>Don’t commit secret keys or private files.</li>
+        </ul>
+
+        <h2 id="branch">Branches: try changes safely</h2>
+        <p>A branch is a separate line of history. Beginners can keep it simple:</p>
+        <ul>
+          <li>Use <strong>main</strong> as your stable branch.</li>
+          <li>Create a branch when you want to try big changes.</li>
+        </ul>
+        <p>If you’re working solo, you can still use branches to reduce fear: you’ll feel safer experimenting.</p>
+
+        <h2 id="remote">Remotes: your copy vs GitHub’s copy</h2>
+        <p>Your project exists in two places:</p>
+        <ul>
+          <li><strong>Local repository</strong> (on your computer)</li>
+          <li><strong>Remote repository</strong> (on GitHub)</li>
+        </ul>
+        <p>The two key actions:</p>
+        <ul>
+          <li><strong>Push</strong>: send your commits to GitHub</li>
+          <li><strong>Pull</strong>: bring GitHub commits down to your computer</li>
+        </ul>
+
+        <h2 id="workflow">A simple beginner workflow</h2>
+        <p>For a static site, a beginner workflow looks like this:</p>
+        <ol>
+          <li>Edit files.</li>
+          <li>Preview locally (open HTML files in a browser).</li>
+          <li>Stage changes: <code>git add .</code></li>
+          <li>Commit: <code>git commit -m "Describe the change"</code></li>
+          <li>Push: <code>git push</code></li>
+        </ol>
+        <p>That’s enough to be productive and safe.</p>
+
+        <h2 id="pages">How this connects to GitHub Pages</h2>
+        <p>GitHub Pages builds your site from your repository. When you push changes, Pages updates the deployed site shortly after.</p>
+        <p>If you’re learning hosting, read <a href="post-12.html">How hosting works (GitHub Pages explained)</a>. If you’re learning how to build the site itself, read <a href="post-10.html">How to build your first static website</a>.</p>
+
+        <h2 id="mistakes">Common mistakes and how to avoid them</h2>
+        <ul>
+          <li><strong>Forgetting to pull</strong> (when collaborating): pull before starting work.</li>
+          <li><strong>Committing everything</strong>: don’t commit downloads, build artifacts, or large random files.</li>
+          <li><strong>Huge commits</strong>: if a commit touches many unrelated files, it’s hard to debug later.</li>
+          <li><strong>Not writing messages</strong>: “update” doesn’t help future-you.</li>
+        </ul>
+
+        <h2 id="related">Related reading</h2>
+        <ul>
+          <li><a href="post-10.html">How to Build Your First Static Website</a></li>
+          <li><a href="post-12.html">How Hosting Works (GitHub Pages Explained)</a></li>
+          <li><a href="post-11.html">Common Mistakes Beginners Make in Web Development</a></li>
+          <li><a href="post-4.html">Getting Started with Web Development as a Student</a></li>
+          <li><a href="index.html">Back to Blog index</a></li>
+        </ul>
+
+        <p class="small">Tip: Keep your first projects simple and finish them. You’ll learn faster.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <p style="margin: 0 0 6px;"><strong>Tech &amp; Student Help Hub</strong></p>
+        <p class="small" style="margin: 0;">Beginner-friendly guides for tech fixes, student career planning, and online tools.</p>
+        <p class="small footer-contact"><a class="footer-email" href="mailto:techstudenthub@gmail.com">techstudenthub@gmail.com</a></p>
+      </div>
+      <div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <p class="small" style="margin: 10px 0 0;">© 2026 Tech &amp; Student Help Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>How Hosting Works (GitHub Pages Explained) | Tech &amp; Student Help Hub</title>
+  <meta name="description" content="A simple explanation of website hosting with GitHub Pages: domains, project sites vs user sites, relative links, and a checklist to avoid 404 errors." />
+
+  <!-- Canonical URL can be added after deployment. -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Hosting Works (GitHub Pages Explained)" />
+  <meta property="og:description" content="Domains, project sites vs user sites, and how to avoid broken links on GitHub Pages." />
+  <meta property="og:image" content="../assets/images/featured-adsense.svg" />
+  <meta property="og:url" content="post-12.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Hosting Works (GitHub Pages Explained)" />
+  <meta name="twitter:description" content="Understand hosting and avoid broken links for GitHub Pages project sites." />
+  <meta name="twitter:image" content="../assets/images/featured-adsense.svg" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How Hosting Works (GitHub Pages Explained)",
+    "description": "A simple explanation of website hosting with GitHub Pages: domains, project sites vs user sites, relative links, and a checklist to avoid 404 errors.",
+    "image": "../assets/images/featured-adsense.svg",
+    "datePublished": "2026-01-04",
+    "dateModified": "2026-01-04",
+    "author": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../assets/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "post-12.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Tech & Student Help Hub home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14c1.2 0 2.3.5 3 1.4.7-.9 1.8-1.4 3-1.4 2.2 0 4 1.8 4 4H3c0-2.2 1.8-4 4-4Z" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 3v3" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 8h12" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Tech &amp; Student Help Hub</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container">
+      <article class="prose" aria-label="Blog post">
+        <header>
+          <p class="kicker">Hosting &amp; Deployment</p>
+          <h1>How Hosting Works (GitHub Pages Explained)</h1>
+          <p class="lede">Hosting means putting your website files on a server so other people can access them. GitHub Pages is a beginner-friendly way to host static sites for free. This guide explains the key concepts and the #1 cause of broken links on Pages: using the wrong kind of URL paths.</p>
+          <div class="meta">
+            <span><time datetime="2026-01-04">Jan 4, 2026</time></span>
+            <span aria-hidden="true">•</span>
+            <span>12 min read</span>
+            <span aria-hidden="true">•</span>
+            <span>Category: Hosting &amp; Deployment</span>
+          </div>
+        </header>
+
+        <figure class="post-featured-image" aria-label="Featured image">
+          <img class="post-featured-image" src="../assets/images/featured-adsense.svg" alt="Illustration representing hosting and website deployment" width="1200" height="630" loading="eager" decoding="async" />
+          <figcaption>Hosting is just “put files on a server,” but links matter.</figcaption>
+        </figure>
+
+        <nav class="table-of-contents" aria-label="Table of contents">
+          <strong>Table of contents</strong>
+          <ol>
+            <li><a href="#hosting">What hosting is</a></li>
+            <li><a href="#domain">Domains and URL paths</a></li>
+            <li><a href="#pages">GitHub Pages basics</a></li>
+            <li><a href="#project-vs-user">Project site vs user site (important)</a></li>
+            <li><a href="#relative-links">Relative links (the safe approach)</a></li>
+            <li><a href="#checklist">A checklist to avoid 404 errors</a></li>
+            <li><a href="#related">Related reading</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="hosting">What hosting is</h2>
+        <p>When you open a website, your browser requests files (HTML/CSS/JS/images) from a server. Hosting is the service that stores those files and serves them to visitors.</p>
+        <p>A static site is simple: you upload files, and the server returns them when requested.</p>
+
+        <h2 id="domain">Domains and URL paths</h2>
+        <p>A URL has a domain and a path. Example:</p>
+        <ul>
+          <li><strong>Domain:</strong> <code>example.com</code></li>
+          <li><strong>Path:</strong> <code>/blog/post-1.html</code></li>
+        </ul>
+        <p>When you use a link that starts with <code>/</code>, it usually means “from the domain root.” That’s where beginners get stuck on GitHub Pages project sites.</p>
+
+        <h2 id="pages">GitHub Pages basics</h2>
+        <p>GitHub Pages publishes your site from a repository branch. After you push changes, GitHub builds and serves your site at a Pages URL.</p>
+        <p>For static sites, this is convenient: you can host HTML/CSS/JS without a server or database.</p>
+
+        <h2 id="project-vs-user">Project site vs user site (important)</h2>
+        <p>GitHub Pages supports two common site types:</p>
+        <ul>
+          <li><strong>User/organization site</strong>: served from the domain root</li>
+          <li><strong>Project site</strong>: served from a sub-path based on the repository name</li>
+        </ul>
+        <p>If your site is a project site, your deployed URL contains the repo name (a subfolder). In that case, root-based links like <code>/blog/index.html</code> can break because they point to the domain root instead of your project folder.</p>
+
+        <h2 id="relative-links">Relative links (the safe approach)</h2>
+        <p>Relative links do not start with <code>/</code>. They are resolved based on the current page’s folder.</p>
+        <p>Examples:</p>
+        <ul>
+          <li>From the site homepage: <code>blog/index.html</code></li>
+          <li>From a blog post inside the blog folder: <code>index.html</code> (same folder)</li>
+          <li>From a blog post back to home: <code>../index.html</code></li>
+        </ul>
+        <p>This site uses relative links so it works reliably as a project site.</p>
+
+        <h2 id="checklist">A checklist to avoid 404 errors</h2>
+        <ul>
+          <li><strong>Avoid leading-slash internal links</strong> on project sites.</li>
+          <li><strong>Check every navigation link</strong> on every template.</li>
+          <li><strong>Use consistent file names</strong> (don’t mix <code>Index.html</code> and <code>index.html</code>).</li>
+          <li><strong>Verify assets exist</strong> (images and CSS paths).</li>
+          <li><strong>Add a sitemap</strong> and update it when you add new pages.</li>
+          <li><strong>Test 404 page</strong> so users aren’t stuck.</li>
+        </ul>
+        <p>If you want a simple build workflow that includes deployment, see <a href="post-9.html">How to build your first static website</a> and <a href="post-8.html">How Git and GitHub work</a>.</p>
+
+        <h2 id="related">Related reading</h2>
+        <ul>
+          <li><a href="post-8.html">How Git and GitHub Work (Simple Explanation)</a></li>
+          <li><a href="post-9.html">How to Build Your First Static Website</a></li>
+          <li><a href="post-10.html">Best Free Tools for Students Learning Programming</a></li>
+          <li><a href="post-11.html">Common Mistakes Beginners Make in Web Development</a></li>
+          <li><a href="index.html">Back to Blog index</a></li>
+        </ul>
+
+        <p class="small">Most hosting problems are actually link-path problems. Keep links simple.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <p style="margin: 0 0 6px;"><strong>Tech &amp; Student Help Hub</strong></p>
+        <p class="small" style="margin: 0;">Beginner-friendly guides for tech fixes, student career planning, and online tools.</p>
+        <p class="small footer-contact"><a class="footer-email" href="mailto:techstudenthub@gmail.com">techstudenthub@gmail.com</a></p>
+      </div>
+      <div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <p class="small" style="margin: 10px 0 0;">© 2026 Tech &amp; Student Help Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

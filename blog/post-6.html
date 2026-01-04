@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>CSS Fundamentals Explained with Practical Examples | Tech &amp; Student Help Hub</title>
+  <meta name="description" content="Understand CSS fundamentals with practical examples: selectors, the box model, layout basics, responsive patterns, and common beginner mistakes." />
+
+  <!-- Canonical URL can be added after deployment. -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="CSS Fundamentals Explained with Practical Examples" />
+  <meta property="og:description" content="Selectors, box model, layout, responsive design, and a few patterns that make CSS easier." />
+  <meta property="og:image" content="../assets/images/placeholder.svg" />
+  <meta property="og:url" content="post-6.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CSS Fundamentals Explained with Practical Examples" />
+  <meta name="twitter:description" content="Learn selectors, box model, layout basics, and responsive patterns with examples." />
+  <meta name="twitter:image" content="../assets/images/placeholder.svg" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CSS Fundamentals Explained with Practical Examples",
+    "description": "Understand CSS fundamentals with practical examples: selectors, the box model, layout basics, responsive patterns, and common beginner mistakes.",
+    "image": "../assets/images/placeholder.svg",
+    "datePublished": "2026-01-04",
+    "dateModified": "2026-01-04",
+    "author": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../assets/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "post-6.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Tech & Student Help Hub home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14c1.2 0 2.3.5 3 1.4.7-.9 1.8-1.4 3-1.4 2.2 0 4 1.8 4 4H3c0-2.2 1.8-4 4-4Z" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 3v3" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 8h12" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Tech &amp; Student Help Hub</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container">
+      <article class="prose" aria-label="Blog post">
+        <header>
+          <p class="kicker">Web Development</p>
+          <h1>CSS Fundamentals Explained with Practical Examples</h1>
+          <p class="lede">CSS is where your site becomes readable, responsive, and pleasant to use. Beginners often think CSS is “random” because changes don’t behave as expected. The truth is CSS follows rules—once you learn a few fundamentals (selectors, specificity, box model, layout), it becomes predictable.</p>
+          <div class="meta">
+            <span><time datetime="2026-01-04">Jan 4, 2026</time></span>
+            <span aria-hidden="true">•</span>
+            <span>12 min read</span>
+            <span aria-hidden="true">•</span>
+            <span>Category: Web Development</span>
+          </div>
+        </header>
+
+        <figure class="post-featured-image" aria-label="Featured image">
+          <img class="post-featured-image" src="../assets/images/placeholder.svg" alt="Illustration of CSS layout boxes and spacing" width="1200" height="630" loading="eager" decoding="async" />
+          <figcaption>CSS becomes easier when you think in boxes and rules.</figcaption>
+        </figure>
+
+        <nav class="table-of-contents" aria-label="Table of contents">
+          <strong>Table of contents</strong>
+          <ol>
+            <li><a href="#what-css-does">What CSS does</a></li>
+            <li><a href="#selectors">Selectors (the useful 20%)</a></li>
+            <li><a href="#specificity">Specificity (why styles don’t apply)</a></li>
+            <li><a href="#box-model">Box model (margin, border, padding)</a></li>
+            <li><a href="#layout">Layout basics: flex and grid</a></li>
+            <li><a href="#responsive">Responsive design (mobile-friendly)</a></li>
+            <li><a href="#habits">Practical habits that keep CSS manageable</a></li>
+            <li><a href="#related">Related reading</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="what-css-does">What CSS does</h2>
+        <p>CSS controls presentation: spacing, colors, fonts, layout, and responsiveness. Your browser reads HTML first, then applies CSS rules to elements that match selectors.</p>
+        <p>A simple mental model is: <strong>select elements → apply rules → resolve conflicts → render boxes</strong>.</p>
+
+        <h2 id="selectors">Selectors (the useful 20%)</h2>
+        <p>Start with the selectors you’ll use every day:</p>
+        <ul>
+          <li><code>element</code> selectors: <code>p</code>, <code>h1</code>, <code>a</code></li>
+          <li><code>.class</code> selectors: <code>.button</code>, <code>.card</code></li>
+          <li><code>#id</code> selectors: <code>#main</code> (use sparingly)</li>
+          <li>Descendants: <code>.nav a</code></li>
+          <li>Pseudo-classes: <code>a:hover</code>, <code>button:focus</code></li>
+        </ul>
+        <p>Example:</p>
+        <pre><code>.card {
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</code></pre>
+
+        <h2 id="specificity">Specificity (why styles don’t apply)</h2>
+        <p>If two rules target the same element/property, CSS uses a priority system called <strong>specificity</strong> (plus source order). A simplified rule of thumb:</p>
+        <ul>
+          <li>Inline styles win over everything (avoid them).</li>
+          <li><code>#id</code> is stronger than <code>.class</code>.</li>
+          <li><code>.class</code> is stronger than element selectors.</li>
+          <li>If specificity is equal, the later rule wins.</li>
+        </ul>
+        <p>When you feel stuck, inspect the element in devtools and look at which rule is crossed out.</p>
+
+        <h2 id="box-model">Box model (margin, border, padding)</h2>
+        <p>Every element is a box. The box model explains spacing:</p>
+        <ul>
+          <li><strong>Content</strong>: the text/image area</li>
+          <li><strong>Padding</strong>: space inside the border</li>
+          <li><strong>Border</strong>: the line around the element</li>
+          <li><strong>Margin</strong>: space outside the border</li>
+        </ul>
+        <p>Example:</p>
+        <pre><code>.button {
+  padding: 10px 14px;
+  border: 1px solid currentColor;
+  margin: 8px 0;
+}
+</code></pre>
+        <p>A common beginner bug is “my width doesn’t fit.” That’s often because padding/border are added on top of width. Using <code>box-sizing: border-box;</code> is a common fix (many sites set it globally).</p>
+
+        <h2 id="layout">Layout basics: flex and grid</h2>
+        <p>Modern CSS layout is mostly flexbox and grid. You don’t need to master every property immediately.</p>
+        <h3>Flexbox (one-dimensional layouts)</h3>
+        <p>Use flexbox to align items in a row or a column:</p>
+        <pre><code>.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+</code></pre>
+        <p>Common use cases: navbars, button rows, cards in a row.</p>
+
+        <h3>Grid (two-dimensional layouts)</h3>
+        <p>Use grid for page layouts and card grids:</p>
+        <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+</code></pre>
+        <p>Grid becomes powerful when you want rows and columns at the same time.</p>
+
+        <h2 id="responsive">Responsive design (mobile-friendly)</h2>
+        <p>Responsive design means your page works on phones, tablets, and desktops. Start with these patterns:</p>
+        <ul>
+          <li>Use flexible units (%, rem) instead of fixed pixels everywhere.</li>
+          <li>Limit line length for readability.</li>
+          <li>Use media queries for layout changes.</li>
+        </ul>
+        <p>Example media query:</p>
+        <pre><code>@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</code></pre>
+
+        <h2 id="habits">Practical habits that keep CSS manageable</h2>
+        <ul>
+          <li><strong>Name classes by purpose</strong> (e.g., <code>.card</code>, <code>.meta</code>, <code>.cta-row</code>) rather than by appearance.</li>
+          <li><strong>Avoid deep selectors</strong> like <code>.page .container .section .card h2</code> unless needed.</li>
+          <li><strong>Prefer small reusable utilities</strong> (spacing, alignment) over repeated inline styles.</li>
+          <li><strong>Test in devtools</strong> before editing a lot of CSS.</li>
+        </ul>
+        <p>When you build your first complete site, you’ll see these habits pay off. See <a href="post-10.html">How to build your first static website</a>.</p>
+
+        <h2 id="related">Related reading</h2>
+        <ul>
+          <li><a href="post-5.html">HTML Basics Every Beginner Must Know</a></li>
+          <li><a href="post-7.html">JavaScript Basics for Absolute Beginners</a></li>
+          <li><a href="post-11.html">How Git and GitHub Work (Simple Explanation)</a></li>
+          <li><a href="post-12.html">How Hosting Works (GitHub Pages Explained)</a></li>
+          <li><a href="index.html">Back to Blog index</a></li>
+        </ul>
+
+        <p class="small">If you’re starting from zero, read <a href="post-4.html">Getting started as a student</a> first.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <p style="margin: 0 0 6px;"><strong>Tech &amp; Student Help Hub</strong></p>
+        <p class="small" style="margin: 0;">Beginner-friendly guides for tech fixes, student career planning, and online tools.</p>
+        <p class="small footer-contact"><a class="footer-email" href="mailto:techstudenthub@gmail.com">techstudenthub@gmail.com</a></p>
+      </div>
+      <div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <p class="small" style="margin: 10px 0 0;">© 2026 Tech &amp; Student Help Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

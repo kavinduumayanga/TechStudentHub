@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>HTML Basics Every Beginner Must Know | Tech &amp; Student Help Hub</title>
+  <meta name="description" content="Learn the HTML basics that make pages readable and well-structured: semantic tags, links, images, lists, forms, and accessibility-friendly patterns." />
+
+  <!-- Canonical URL can be added after deployment. -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="HTML Basics Every Beginner Must Know" />
+  <meta property="og:description" content="A beginner-friendly HTML guide: structure, semantics, links, images, forms, and accessibility essentials." />
+  <meta property="og:image" content="../assets/images/placeholder.svg" />
+  <meta property="og:url" content="post-5.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HTML Basics Every Beginner Must Know" />
+  <meta name="twitter:description" content="Structure pages with semantic HTML, links, images, lists, and forms." />
+  <meta name="twitter:image" content="../assets/images/placeholder.svg" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "HTML Basics Every Beginner Must Know",
+    "description": "Learn the HTML basics that make pages readable and well-structured: semantic tags, links, images, lists, forms, and accessibility-friendly patterns.",
+    "image": "../assets/images/placeholder.svg",
+    "datePublished": "2026-01-04",
+    "dateModified": "2026-01-04",
+    "author": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../assets/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "post-5.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Tech & Student Help Hub home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14c1.2 0 2.3.5 3 1.4.7-.9 1.8-1.4 3-1.4 2.2 0 4 1.8 4 4H3c0-2.2 1.8-4 4-4Z" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 3v3" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 8h12" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Tech &amp; Student Help Hub</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container">
+      <article class="prose" aria-label="Blog post">
+        <header>
+          <p class="kicker">Web Development</p>
+          <h1>HTML Basics Every Beginner Must Know</h1>
+          <p class="lede">HTML (HyperText Markup Language) is the structure of the web. When you understand a small set of core tags and a few best practices, you can build pages that are readable, accessible, and easy to style with CSS. This guide covers the HTML basics beginners must know—without overload.</p>
+          <div class="meta">
+            <span><time datetime="2026-01-04">Jan 4, 2026</time></span>
+            <span aria-hidden="true">•</span>
+            <span>11 min read</span>
+            <span aria-hidden="true">•</span>
+            <span>Category: Web Development</span>
+          </div>
+        </header>
+
+        <figure class="post-featured-image" aria-label="Featured image">
+          <img class="post-featured-image" src="../assets/images/placeholder.svg" alt="Illustration of an HTML document structure" width="1200" height="630" loading="eager" decoding="async" />
+          <figcaption>Good HTML is about meaning and structure, not appearance.</figcaption>
+        </figure>
+
+        <nav class="table-of-contents" aria-label="Table of contents">
+          <strong>Table of contents</strong>
+          <ol>
+            <li><a href="#html-is">What HTML is (and what it isn’t)</a></li>
+            <li><a href="#skeleton">A minimal HTML page skeleton</a></li>
+            <li><a href="#semantics">Semantic tags you should actually use</a></li>
+            <li><a href="#links-images">Links and images (the correct patterns)</a></li>
+            <li><a href="#lists">Lists and content grouping</a></li>
+            <li><a href="#forms">Forms: the beginner essentials</a></li>
+            <li><a href="#accessibility">Accessibility basics that help everyone</a></li>
+            <li><a href="#related">Related reading</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="html-is">What HTML is (and what it isn’t)</h2>
+        <p>HTML describes the structure of a page: headings, paragraphs, navigation, images, and forms. It does <em>not</em> control spacing, colors, or layout—that’s CSS. It also does not add complex interactivity—that’s usually JavaScript.</p>
+        <p>Think of HTML as a well-labeled document. When you use the right tags, browsers and assistive technologies (like screen readers) can understand your content properly.</p>
+
+        <h2 id="skeleton">A minimal HTML page skeleton</h2>
+        <p>Here is the smallest “real” HTML page most projects start with:</p>
+        <pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello&lt;/h1&gt;
+  &lt;p&gt;My first page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        <p>Three beginner tips:</p>
+        <ul>
+          <li><code>lang</code> helps screen readers and translation tools.</li>
+          <li>The viewport meta tag helps your layout work on mobile.</li>
+          <li>The title shows in the browser tab and search results.</li>
+        </ul>
+
+        <h2 id="semantics">Semantic tags you should actually use</h2>
+        <p>Semantic tags describe meaning. They make your site easier to maintain and improve accessibility.</p>
+        <h3>Common semantic layout tags</h3>
+        <ul>
+          <li><code>&lt;header&gt;</code> — top-of-page area (branding, primary nav)</li>
+          <li><code>&lt;nav&gt;</code> — navigation links</li>
+          <li><code>&lt;main&gt;</code> — the primary content of the page</li>
+          <li><code>&lt;article&gt;</code> — a standalone piece of content (like a blog post)</li>
+          <li><code>&lt;section&gt;</code> — a thematic grouping of content</li>
+          <li><code>&lt;footer&gt;</code> — the bottom area (legal links, contact)</li>
+        </ul>
+        <p>Use headings in order: one <code>&lt;h1&gt;</code> per page, then <code>&lt;h2&gt;</code> for major sections, and <code>&lt;h3&gt;</code> for sub-sections. This makes your page easy to scan.</p>
+
+        <h2 id="links-images">Links and images (the correct patterns)</h2>
+        <h3>Links</h3>
+        <p>Use <code>&lt;a href=&quot;...&quot;&gt;</code> for navigation and references. Good links have clear text:</p>
+        <ul>
+          <li><strong>Bad:</strong> “Click here”</li>
+          <li><strong>Better:</strong> “Read the CSS fundamentals guide”</li>
+        </ul>
+        <p>On GitHub Pages project sites, avoid links that start with <code>/</code>. Use relative links (this site already follows that rule).</p>
+
+        <h3>Images</h3>
+        <p>Every image should have an <code>alt</code> attribute. If the image is informative, describe it. If it’s decorative, use <code>alt=&quot;&quot;</code>.</p>
+        <pre><code>&lt;img src=&quot;../assets/images/placeholder.svg&quot;
+     alt=&quot;Diagram showing a simple HTML page structure&quot;
+     width=&quot;1200&quot; height=&quot;630&quot; /&gt;
+</code></pre>
+        <p>Width/height help reduce layout shifts while the image loads.</p>
+
+        <h2 id="lists">Lists and content grouping</h2>
+        <p>Use lists when you have a set of items. This improves readability and makes your content easier to scan.</p>
+        <ul>
+          <li><code>&lt;ul&gt;</code> for unordered lists (no specific order)</li>
+          <li><code>&lt;ol&gt;</code> for ordered lists (steps or ranked items)</li>
+        </ul>
+        <p>Group related content with <code>&lt;section&gt;</code> and use <code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code> for images with captions.</p>
+
+        <h2 id="forms">Forms: the beginner essentials</h2>
+        <p>Forms collect input. The best beginner habit is pairing every input with a <code>&lt;label&gt;</code>:</p>
+        <pre><code>&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+&lt;input id=&quot;email&quot; name=&quot;email&quot; type=&quot;email&quot; required /&gt;
+</code></pre>
+        <p>Basic input types you’ll use often:</p>
+        <ul>
+          <li><code>type="text"</code> for general text</li>
+          <li><code>type="email"</code> for email addresses</li>
+          <li><code>type="password"</code> for passwords</li>
+          <li><code>&lt;textarea&gt;</code> for multi-line messages</li>
+        </ul>
+        <p>This site uses a mailto form on the Contact page (static-friendly). You can study it at <a href="../contact.html">Contact</a>.</p>
+
+        <h2 id="accessibility">Accessibility basics that help everyone</h2>
+        <p>You don’t need to memorize every accessibility rule to start. Focus on these beginner-friendly habits:</p>
+        <ul>
+          <li>Use semantic tags and proper heading order.</li>
+          <li>Make link text meaningful (“Read our Git guide”).</li>
+          <li>Ensure form fields have labels.</li>
+          <li>Add alt text to images.</li>
+          <li>Test with keyboard-only navigation (Tab/Shift+Tab).</li>
+        </ul>
+        <p>Accessibility is also a quality signal: it makes your site more usable for more people.</p>
+
+        <h2 id="related">Related reading</h2>
+        <ul>
+          <li><a href="post-6.html">CSS Fundamentals Explained with Practical Examples</a></li>
+          <li><a href="post-7.html">JavaScript Basics for Absolute Beginners</a></li>
+          <li><a href="post-10.html">How to Build Your First Static Website</a></li>
+          <li><a href="post-11.html">How Git and GitHub Work (Simple Explanation)</a></li>
+          <li><a href="index.html">Back to Blog index</a></li>
+        </ul>
+
+        <p class="small">Want a recommended learning order? Start with <a href="post-4.html">Getting started as a student</a>.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <p style="margin: 0 0 6px;"><strong>Tech &amp; Student Help Hub</strong></p>
+        <p class="small" style="margin: 0;">Beginner-friendly guides for tech fixes, student career planning, and online tools.</p>
+        <p class="small footer-contact"><a class="footer-email" href="mailto:techstudenthub@gmail.com">techstudenthub@gmail.com</a></p>
+      </div>
+      <div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <p class="small" style="margin: 10px 0 0;">© 2026 Tech &amp; Student Help Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

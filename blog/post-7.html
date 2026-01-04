@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>JavaScript Basics for Absolute Beginners | Tech &amp; Student Help Hub</title>
+  <meta name="description" content="A beginner-friendly JavaScript guide: variables, functions, arrays, objects, DOM basics, events, and safe practice exercises for your first scripts." />
+
+  <!-- Canonical URL can be added after deployment. -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="JavaScript Basics for Absolute Beginners" />
+  <meta property="og:description" content="Learn JavaScript fundamentals and DOM events with small practice exercises." />
+  <meta property="og:image" content="../assets/images/placeholder.svg" />
+  <meta property="og:url" content="post-7.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JavaScript Basics for Absolute Beginners" />
+  <meta name="twitter:description" content="Variables, functions, arrays, objects, and beginner DOM events explained." />
+  <meta name="twitter:image" content="../assets/images/placeholder.svg" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "JavaScript Basics for Absolute Beginners",
+    "description": "A beginner-friendly JavaScript guide: variables, functions, arrays, objects, DOM basics, events, and safe practice exercises for your first scripts.",
+    "image": "../assets/images/placeholder.svg",
+    "datePublished": "2026-01-04",
+    "dateModified": "2026-01-04",
+    "author": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tech & Student Help Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../assets/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "post-7.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Tech & Student Help Hub home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14c1.2 0 2.3.5 3 1.4.7-.9 1.8-1.4 3-1.4 2.2 0 4 1.8 4 4H3c0-2.2 1.8-4 4-4Z" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 3v3" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 8h12" stroke="#2b6de8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Tech &amp; Student Help Hub</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container">
+      <article class="prose" aria-label="Blog post">
+        <header>
+          <p class="kicker">Web Development</p>
+          <h1>JavaScript Basics for Absolute Beginners</h1>
+          <p class="lede">JavaScript is the language that makes web pages interactive. You can use it to respond to clicks, validate forms, filter lists, and update text without reloading the page. This guide teaches the fundamentals you need to write small, reliable scripts—and understand what the browser is doing.</p>
+          <div class="meta">
+            <span><time datetime="2026-01-04">Jan 4, 2026</time></span>
+            <span aria-hidden="true">•</span>
+            <span>12 min read</span>
+            <span aria-hidden="true">•</span>
+            <span>Category: Web Development</span>
+          </div>
+        </header>
+
+        <figure class="post-featured-image" aria-label="Featured image">
+          <img class="post-featured-image" src="../assets/images/placeholder.svg" alt="Illustration of code brackets and a simple button interaction" width="1200" height="630" loading="eager" decoding="async" />
+          <figcaption>Start with small scripts you can fully understand.</figcaption>
+        </figure>
+
+        <nav class="table-of-contents" aria-label="Table of contents">
+          <strong>Table of contents</strong>
+          <ol>
+            <li><a href="#what-js-is">What JavaScript is used for</a></li>
+            <li><a href="#variables">Variables and types (just the essentials)</a></li>
+            <li><a href="#conditions-loops">Conditions and loops</a></li>
+            <li><a href="#functions">Functions (your most important tool)</a></li>
+            <li><a href="#arrays-objects">Arrays and objects (real-world data)</a></li>
+            <li><a href="#dom">DOM basics: changing the page</a></li>
+            <li><a href="#events">Events: clicks, input, submit</a></li>
+            <li><a href="#practice">Practice exercises</a></li>
+            <li><a href="#related">Related reading</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="what-js-is">What JavaScript is used for</h2>
+        <p>On a static site, JavaScript is usually used for:</p>
+        <ul>
+          <li>Filtering and searching content (like a blog search)</li>
+          <li>Opening menus and toggles</li>
+          <li>Form validation (checking required fields)</li>
+          <li>Small UI improvements (tabs, accordions)</li>
+        </ul>
+        <p>This site’s blog search is powered by a simple script. You can see it in action on <a href="index.html">Blog</a>.</p>
+
+        <h2 id="variables">Variables and types (just the essentials)</h2>
+        <p>Variables store values. Use <code>const</code> when the variable reference won’t change, and <code>let</code> when it will.</p>
+        <pre><code>const siteName = "Tech & Student Help Hub";
+let count = 0;
+count = count + 1;
+</code></pre>
+        <p>Common data types you’ll use early:</p>
+        <ul>
+          <li><strong>String</strong>: text like <code>"Hello"</code></li>
+          <li><strong>Number</strong>: <code>42</code>, <code>3.14</code></li>
+          <li><strong>Boolean</strong>: <code>true</code>, <code>false</code></li>
+          <li><strong>Array</strong>: a list of values</li>
+          <li><strong>Object</strong>: a set of named properties</li>
+        </ul>
+
+        <h2 id="conditions-loops">Conditions and loops</h2>
+        <p>Conditions let you run code only when something is true:</p>
+        <pre><code>const age = 18;
+if (age &gt;= 18) {
+  console.log("Allowed");
+} else {
+  console.log("Not allowed");
+}
+</code></pre>
+        <p>Loops repeat work. A simple <code>for</code> loop is common:</p>
+        <pre><code>const items = ["HTML", "CSS", "JavaScript"]; 
+for (let i = 0; i &lt; items.length; i++) {
+  console.log(items[i]);
+}
+</code></pre>
+        <p>Later you’ll use methods like <code>forEach</code> and <code>map</code>, but start simple.</p>
+
+        <h2 id="functions">Functions (your most important tool)</h2>
+        <p>Functions group logic and help you reuse code:</p>
+        <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+const message = greet("Student");
+console.log(message);
+</code></pre>
+        <p>Beginner habit: write small functions that do one thing. It makes debugging easier.</p>
+
+        <h2 id="arrays-objects">Arrays and objects (real-world data)</h2>
+        <p>Arrays store lists. Objects store “things” with properties.</p>
+        <pre><code>const posts = [
+  { title: "HTML Basics", minutes: 11 },
+  { title: "CSS Fundamentals", minutes: 12 }
+];
+
+const firstTitle = posts[0].title;
+</code></pre>
+        <p>Most real code is simply “get data → loop → render”.</p>
+
+        <h2 id="dom">DOM basics: changing the page</h2>
+        <p>The DOM (Document Object Model) is how JavaScript interacts with HTML. You can select elements and update them.</p>
+        <pre><code>const heading = document.querySelector("h1");
+heading.textContent = "Updated title";
+</code></pre>
+        <p>Two common properties:</p>
+        <ul>
+          <li><code>textContent</code> for plain text</li>
+          <li><code>innerHTML</code> for HTML (use carefully)</li>
+        </ul>
+
+        <h2 id="events">Events: clicks, input, submit</h2>
+        <p>Events trigger code when the user does something:</p>
+        <pre><code>const button = document.querySelector(".button");
+button.addEventListener("click", () =&gt; {
+  console.log("Clicked!");
+});
+</code></pre>
+        <p>Input events help you build search/filter features:</p>
+        <pre><code>const input = document.querySelector("#blog-search");
+input.addEventListener("input", () =&gt; {
+  console.log(input.value);
+});
+</code></pre>
+
+        <h2 id="practice">Practice exercises</h2>
+        <p>Practice is where JavaScript becomes real. Try these beginner exercises:</p>
+        <ol>
+          <li><strong>Counter:</strong> a button that increments a number on the page</li>
+          <li><strong>Checklist:</strong> mark items complete with a click</li>
+          <li><strong>Filter:</strong> hide/show cards based on a search input</li>
+        </ol>
+        <p>When you’re ready to publish and track changes, learn Git next: <a href="post-11.html">How Git and GitHub work</a>.</p>
+
+        <h2 id="related">Related reading</h2>
+        <ul>
+          <li><a href="post-5.html">HTML Basics Every Beginner Must Know</a></li>
+          <li><a href="post-6.html">CSS Fundamentals Explained with Practical Examples</a></li>
+          <li><a href="post-10.html">How to Build Your First Static Website</a></li>
+          <li><a href="post-11.html">How Git and GitHub Work (Simple Explanation)</a></li>
+          <li><a href="index.html">Back to Blog index</a></li>
+        </ul>
+
+        <p class="small">If you’re just starting, begin with <a href="post-4.html">Getting started as a student</a>.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <p style="margin: 0 0 6px;"><strong>Tech &amp; Student Help Hub</strong></p>
+        <p class="small" style="margin: 0;">Beginner-friendly guides for tech fixes, student career planning, and online tools.</p>
+        <p class="small footer-contact"><a class="footer-email" href="mailto:techstudenthub@gmail.com">techstudenthub@gmail.com</a></p>
+      </div>
+      <div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <p class="small" style="margin: 10px 0 0;">© 2026 Tech &amp; Student Help Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
