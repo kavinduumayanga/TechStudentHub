@@ -117,6 +117,16 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Final audit: assets + leading slash paths",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/verify_assets.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
 		}
 	]
 }
